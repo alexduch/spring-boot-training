@@ -3,6 +3,7 @@ package com.github.alexduch.springboottraining.p1_spring;
 import com.github.alexduch.springboottraining.spring.Bonjour;
 import com.github.alexduch.springboottraining.spring.Greeter;
 import com.github.alexduch.springboottraining.spring.GreetingProvider;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,9 +17,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @ExtendWith(SpringExtension.class)
-class GreeterTest {
+@DisplayName("1 Déboguer un ApplicationContext")
+class GreeterApplicationContextTest {
 
   @Nested
+  @DisplayName("1.1 Défini en XML")
   @ContextConfiguration(locations = "classpath:greeter.xml")
   class XmlContextGreeterTest {
 
@@ -33,6 +36,7 @@ class GreeterTest {
   }
 
   @Nested
+  @DisplayName("1.2 Défini en Java")
   @ContextConfiguration
   class JavaContextGreeterTest {
 
@@ -56,6 +60,7 @@ class GreeterTest {
   }
 
   @Nested
+  @DisplayName("1.3 Contenant une FactoryBean")
   @ContextConfiguration(locations = "classpath:greeter-factory-bean.xml")
   class FactoryBeanGreeterTest {
 

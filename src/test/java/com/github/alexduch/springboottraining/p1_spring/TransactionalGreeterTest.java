@@ -3,6 +3,7 @@ package com.github.alexduch.springboottraining.p1_spring;
 import com.github.alexduch.springboottraining.spring.Greeter;
 import com.github.alexduch.springboottraining.spring.GreetingService;
 import com.github.alexduch.springboottraining.spring.Hello;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import static org.mockito.Mockito.*;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration
+@DisplayName("2 Déboguer le déclenchement des transactions")
 class TransactionalGreeterTest {
 
   @MockBean private PlatformTransactionManager transactionManager;
@@ -28,6 +30,7 @@ class TransactionalGreeterTest {
   @Autowired private GreetingService greetingService;
 
   @Test
+  @DisplayName("2.1 Dans un appel interne depuis une méthode transactionnelle")
   void testGreetTheWorld() {
     when(transactionManager.getTransaction(any())).thenReturn(new SimpleTransactionStatus());
 
@@ -38,6 +41,7 @@ class TransactionalGreeterTest {
   }
 
   @Test
+  @DisplayName("2.2 Dans un appel interne depuis une méthode non transactionnelle")
   void testGreetJohn() {
     when(transactionManager.getTransaction(any())).thenReturn(new SimpleTransactionStatus());
 
@@ -48,6 +52,7 @@ class TransactionalGreeterTest {
   }
 
   @Test
+  @DisplayName("2.3 Dans un appel externe")
   void testGreetAlice() {
     when(transactionManager.getTransaction(any())).thenReturn(new SimpleTransactionStatus());
 

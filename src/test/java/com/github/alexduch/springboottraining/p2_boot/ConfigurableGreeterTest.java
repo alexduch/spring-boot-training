@@ -2,12 +2,14 @@ package com.github.alexduch.springboottraining.p2_boot;
 
 import com.github.alexduch.springboottraining.boot.GreeterConfiguration;
 import com.github.alexduch.springboottraining.spring.Greeter;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class GreeterTest {
+@DisplayName("3 Utiliser @ConfigurationProperties")
+class ConfigurableGreeterTest {
 
   @Test
   void testConfigurableGreeter() {
