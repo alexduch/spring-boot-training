@@ -1,6 +1,8 @@
 package com.github.alexduch.springboottraining.p1_spring;
 
-import com.github.alexduch.springboottraining.spring.*;
+import com.github.alexduch.springboottraining.spring.Bonjour;
+import com.github.alexduch.springboottraining.spring.Greeter;
+import com.github.alexduch.springboottraining.spring.GreetingProvider;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
