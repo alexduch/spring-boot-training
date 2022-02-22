@@ -3,6 +3,7 @@ package com.github.alexduch.springboottraining.p1_spring;
 import com.github.alexduch.springboottraining.spring.Bonjour;
 import com.github.alexduch.springboottraining.spring.Greeter;
 import com.github.alexduch.springboottraining.spring.GreetingProvider;
+import com.github.alexduch.springboottraining.spring.GreetingService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -66,6 +67,21 @@ class GreeterApplicationContextTest {
 
     @Autowired(required = false)
     private Greeter greeter;
+
+    @Test
+    void testGreet() {
+      assertNotNull(greeter);
+      assertEquals("Ciao bello !", greeter.greet("bello"));
+    }
+  }
+
+  @Nested
+  @DisplayName("1.4 Mixte XML/Java/Scan")
+  @ContextConfiguration(locations = "classpath:greeter-service.xml")
+  class GreeterServiceTest {
+
+    @Autowired(required = false)
+    private GreetingService greeter;
 
     @Test
     void testGreet() {

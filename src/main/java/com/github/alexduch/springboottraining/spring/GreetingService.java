@@ -1,7 +1,9 @@
 package com.github.alexduch.springboottraining.spring;
 
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+@Service
 public class GreetingService {
 
   private final Greeter greeter;
