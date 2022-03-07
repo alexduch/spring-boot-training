@@ -6,6 +6,6 @@
 
     <context:component-scan base-package="com.github.alexduch.springboottraining.core"/>
 
-    <bean class="com.github.alexduch.springboottraining.boot.GreeterConfiguration"/>
+    <bean class="com.github.alexduch.springboottraining.extensions.config.GreeterConfiguration"/>
 
 </beans>

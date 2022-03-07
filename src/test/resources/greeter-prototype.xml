@@ -3,9 +3,10 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean class="com.github.alexduch.springboottraining.boot.GreetingConfigFactoryBean" id="template"/>
+    <bean class="com.github.alexduch.springboottraining.extensions.config.GreetingConfigFactoryBean" id="template"/>
 
-    <bean class="com.github.alexduch.springboottraining.boot.ConfigurableGreetingProvider" scope="prototype">
+    <bean class="com.github.alexduch.springboottraining.extensions.config.ConfigurableGreetingProvider"
+          scope="prototype">
         <constructor-arg ref="template"/>
     </bean>
 

@@ -1,4 +1,4 @@
-package com.github.alexduch.springboottraining.boot;
+package com.github.alexduch.springboottraining.extensions.config;
 
 import com.github.alexduch.springboottraining.core.Bonjour;
 import com.github.alexduch.springboottraining.core.Greeter;

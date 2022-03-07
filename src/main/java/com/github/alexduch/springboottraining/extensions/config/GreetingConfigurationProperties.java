@@ -1,4 +1,4 @@
-package com.github.alexduch.springboottraining.boot;
+package com.github.alexduch.springboottraining.extensions.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
