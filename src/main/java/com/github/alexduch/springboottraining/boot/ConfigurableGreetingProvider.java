@@ -1,6 +1,6 @@
 package com.github.alexduch.springboottraining.boot;
 
-import com.github.alexduch.springboottraining.spring.GreetingProvider;
+import com.github.alexduch.springboottraining.core.GreetingProvider;
 
 public class ConfigurableGreetingProvider implements GreetingProvider {
 

@@ -1,7 +1,7 @@
 package com.github.alexduch.springboottraining.p2_boot;
 
 import com.github.alexduch.springboottraining.boot.GreeterConfiguration;
-import com.github.alexduch.springboottraining.spring.Greeter;
+import com.github.alexduch.springboottraining.core.Greeter;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;

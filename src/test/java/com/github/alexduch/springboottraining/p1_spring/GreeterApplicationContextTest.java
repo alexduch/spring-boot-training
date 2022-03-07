@@ -1,10 +1,10 @@
 package com.github.alexduch.springboottraining.p1_spring;
 
 import com.github.alexduch.springboottraining.boot.GreetingConfigFactoryBean;
-import com.github.alexduch.springboottraining.spring.Bonjour;
-import com.github.alexduch.springboottraining.spring.Greeter;
-import com.github.alexduch.springboottraining.spring.GreetingProvider;
-import com.github.alexduch.springboottraining.spring.GreetingService;
+import com.github.alexduch.springboottraining.core.Bonjour;
+import com.github.alexduch.springboottraining.core.Greeter;
+import com.github.alexduch.springboottraining.core.GreetingProvider;
+import com.github.alexduch.springboottraining.core.GreetingService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;

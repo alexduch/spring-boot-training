@@ -1,4 +1,4 @@
-package com.github.alexduch.springboottraining.spring;
+package com.github.alexduch.springboottraining.core;
 
 import org.springframework.beans.factory.FactoryBean;
 

@@ -9,6 +9,6 @@
         <constructor-arg ref="template"/>
     </bean>
 
-    <bean class="com.github.alexduch.springboottraining.spring.Greeter"/>
+    <bean class="com.github.alexduch.springboottraining.core.Greeter"/>
 
 </beans>

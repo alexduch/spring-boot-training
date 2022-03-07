@@ -1,8 +1,8 @@
 package com.github.alexduch.springboottraining.p1_spring;
 
-import com.github.alexduch.springboottraining.spring.Greeter;
-import com.github.alexduch.springboottraining.spring.GreetingService;
-import com.github.alexduch.springboottraining.spring.Hello;
+import com.github.alexduch.springboottraining.core.Greeter;
+import com.github.alexduch.springboottraining.core.GreetingService;
+import com.github.alexduch.springboottraining.core.Hello;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

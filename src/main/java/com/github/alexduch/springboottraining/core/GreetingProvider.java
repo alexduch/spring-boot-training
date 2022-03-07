@@ -1,4 +1,4 @@
-package com.github.alexduch.springboottraining.spring;
+package com.github.alexduch.springboottraining.core;
 
 public interface GreetingProvider {
 

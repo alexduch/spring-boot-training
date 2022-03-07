@@ -1,8 +1,8 @@
 package com.github.alexduch.springboottraining.boot;
 
-import com.github.alexduch.springboottraining.spring.Bonjour;
-import com.github.alexduch.springboottraining.spring.Greeter;
-import com.github.alexduch.springboottraining.spring.GreetingProvider;
+import com.github.alexduch.springboottraining.core.Bonjour;
+import com.github.alexduch.springboottraining.core.Greeter;
+import com.github.alexduch.springboottraining.core.GreetingProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
