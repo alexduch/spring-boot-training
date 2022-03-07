@@ -1,5 +1,6 @@
 package com.github.alexduch.springboottraining.p1_spring;
 
+import com.github.alexduch.springboottraining.boot.GreetingConfigFactoryBean;
 import com.github.alexduch.springboottraining.spring.Bonjour;
 import com.github.alexduch.springboottraining.spring.Greeter;
 import com.github.alexduch.springboottraining.spring.GreetingProvider;
@@ -14,8 +15,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @DisplayName("1 Déboguer un ApplicationContext")
@@ -87,6 +87,34 @@ class GreeterApplicationContextTest {
     void testGreet() {
       assertNotNull(greeter);
       assertEquals("Ciao bello !", greeter.greet("bello"));
+    }
+  }
+
+  @Nested
+  @DisplayName("1.5 Avec le scope Prototype")
+  @ContextConfiguration(locations = "classpath:greeter-prototype.xml")
+  class PrototypeGreeterTest {
+
+    @Autowired private GreetingProvider helloAgain;
+    @Autowired private GreetingProvider hello;
+
+    @Autowired private Greeter greeter;
+
+    @Autowired private GreetingConfigFactoryBean greetingConfigFactoryBean;
+
+    @Test
+    void testGreet() {
+      assertNotNull(greeter);
+      assertEquals("Hello, World!", greeter.greet("World"));
+
+      assertNotNull(hello);
+      assertEquals("Hello, %s!", hello.greetingTemplate());
+
+      assertNotNull(helloAgain);
+      assertEquals("Hello again, %s!", helloAgain.greetingTemplate());
+
+      assertNotSame(hello, helloAgain);
+      assertEquals(3, greetingConfigFactoryBean.numberOfCallsToGetObject());
     }
   }
 }
