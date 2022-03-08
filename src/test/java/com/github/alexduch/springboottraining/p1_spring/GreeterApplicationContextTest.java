@@ -51,7 +51,7 @@ class GreeterApplicationContextTest {
     }
 
     @Configuration
-    private static class GreeterConfig {
+    public static class GreeterConfig {
 
       @Bean
       public GreetingProvider greetingProvider() {
@@ -65,8 +65,12 @@ class GreeterApplicationContextTest {
   @ContextConfiguration(locations = "classpath:greeter-factory-bean.xml")
   class FactoryBeanGreeterTest {
 
-    @Autowired(required = false)
-    private Greeter greeter;
+    private final Greeter greeter;
+
+    @Autowired
+    FactoryBeanGreeterTest(Greeter greeter) {
+      this.greeter = greeter;
+    }
 
     @Test
     void testGreet() {
@@ -80,11 +84,8 @@ class GreeterApplicationContextTest {
   @ContextConfiguration(locations = "classpath:greeter-service.xml")
   class GreeterServiceTest {
 
-    @Autowired(required = false)
-    private GreetingService greeter;
-
     @Test
-    void testGreet() {
+    void testGreet(@Autowired(required = false) GreetingService greeter) {
       assertNotNull(greeter);
       assertEquals("Ciao bello !", greeter.greet("bello"));
     }
