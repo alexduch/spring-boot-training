@@ -2,6 +2,7 @@ package com.github.alexduch.springboottraining.p2_boot;
 
 import com.github.alexduch.springboottraining.core.Greeter;
 import com.github.alexduch.springboottraining.extensions.config.GreeterConfiguration;
+import com.github.alexduch.springboottraining.extensions.config.GreetingConfigurationProperties;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;
@@ -17,11 +18,12 @@ class ConfigurableGreeterTest {
         .withPropertyValues("greeting.template=Hi %s!")
         .withUserConfiguration(GreeterConfiguration.class)
         .run(
-            context ->
-                assertThat(context)
-                    .hasSingleBean(Greeter.class)
-                    .getBean(Greeter.class)
-                    .extracting(greeter -> greeter.greet("there"))
-                    .isEqualTo("Hi there!"));
+            context -> {
+              assertThat(context)
+                  .hasSingleBean(Greeter.class)
+                  .getBean(Greeter.class)
+                  .returns("Hi there!", greeter -> greeter.greet("there"));
+              assertThat(context).hasSingleBean(GreetingConfigurationProperties.class);
+            });
   }
 }
